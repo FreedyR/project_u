@@ -6,8 +6,10 @@ import {
   BanknoteArrowDown,
   Map,
   Menu,
+  LogOut,
 } from "lucide-react";
 import "./App.css";
+import man from "./man.png";
 function App() {
   const Category = {
     cockpit: [House, "Kokpit"],
@@ -47,7 +49,15 @@ function App() {
         <header>
           <h2 className="text-xl font-bold mb-4">Kokpit</h2>
         </header>
-
+        <figure className="absolute top-6 right-3 flex gap-2">
+          <img className=" w-10 rounded-full shadow-md" src={man} />
+          <figcaption className="text-sm text-gray-500 mt-2">
+            Witaj, Adam! (s120334)
+          </figcaption>
+          <button className="ml-2">
+            <LogOut />
+          </button>
+        </figure>
         <section className="mt-4 bg-blue-800 p-4 rounded-lg shadow-md text-white">
           <header>
             <p>Najbliższe zajęcia</p>
