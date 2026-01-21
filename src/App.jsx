@@ -74,15 +74,26 @@ function App() {
         </section>
 
         <section className="bg-white p-4 rounded-lg shadow-md mt-8">
-          <header>Zadania</header>
-          <ul className="flex flex-col gap-3">
-            <li className="relative bg-gray-200 rounded-full shadow-md">
-              <div className="relative p-2 bg-[red] w-[80%] rounded-full text-white">
-                <p className="translate-y-[-2px] text-sm">
-                  Jutro: Oddanie projektu z programowania [23:59]
-                </p>
-              </div>
-            </li>
+          <header className="font-semibold">Najbliższe egzaminy</header>
+          <ul className="flex flex-col gap-3 mt-5 align-middle w-full">
+            <div className="flex gap-2 items-center">
+              <Calendar></Calendar>
+              <li className="relative bg-gray-200 rounded-full shadow-md w-full">
+                <p className="p-2">25.01: Algebra liniowa (Egzamin)</p>
+              </li>
+            </div>
+            <div className="flex gap-2 items-center">
+              <Calendar></Calendar>
+              <li className="relative bg-gray-200 rounded-full shadow-md w-full">
+                <p className="p-2">28.01: Algebra Fizyka I (Kolokwium)</p>
+              </li>
+            </div>
+            <div className="flex gap-2 items-center">
+              <Calendar></Calendar>
+              <li className="relative bg-gray-200 rounded-full shadow-md w-full">
+                <p className="p-2">01.02: Programowanie obiektowe (Projekt)</p>
+              </li>
+            </div>
           </ul>
         </section>
       </main>
