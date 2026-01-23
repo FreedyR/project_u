@@ -1,12 +1,20 @@
 import { LogOut, Menu } from "lucide-react";
 import Man from "../man.png";
+import { useMenu } from "../hooks/MenuContext";
+
 const Header = () => {
+  const { toggleMenu, isMenuOpen } = useMenu();
   return (
     <>
-      <header className="absolute flex w-full p-2 z-2">
+      <header className="absolute flex w-full p-2 ">
         <section className="flex justify-items-center gap-4">
-          <Menu className="hidden" />
-          <h2 className="text-xl font-bold translate-y-[-0.2rem]">Kokpit</h2>
+          <button
+            className={`${isMenuOpen ? "hidden" : "relative"} z-3`}
+            onClick={toggleMenu}
+          >
+            <Menu />
+          </button>
+          <h2 className="text-xl font-bold translate-y-1">Kokpit</h2>
         </section>
         <figure className="ml-auto flex gap-2">
           <img className="w-10 rounded-full shadow-md" src={Man} />
