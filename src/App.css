@@ -1,6 +1,8 @@
 #root {
-  position: relative;
-  height: 100vh;
-  min-height: 100vh;
+  height: 100%;
   background-color: #ebf2f2;
+}
+body {
+  position: relative;
+  height: 100dvh;
 }
