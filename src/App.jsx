@@ -9,7 +9,7 @@ function App() {
     <>
       <LeftNav />
       <Header />
-      <main className="h-full ml-64">
+      <main className="h-full">
         <section className="grid sm:grid-cols-2 gap-2 pt-15 auto-rows-min p-2">
           <Classes />
           <Exams />

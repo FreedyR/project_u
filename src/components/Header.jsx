@@ -3,7 +3,7 @@ import Man from "../man.png";
 const Header = () => {
   return (
     <>
-      <header className="absolute flex w-full p-2">
+      <header className="absolute flex w-full p-2 z-2">
         <h2 className="translate-x-65 text-xl font-bold">Kokpit</h2>
         <figure className="ml-auto flex gap-2">
           <img className="w-10 rounded-full shadow-md" src={Man} />
