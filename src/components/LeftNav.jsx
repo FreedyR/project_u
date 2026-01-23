@@ -17,13 +17,12 @@ const LeftNav = () => {
     payments: [BanknoteArrowDown, "Płatności"],
     campusMap: [Map, "Mapa Kampusu"],
   };
-  const { toggleMenu, isMenuOpen, menuRef } = useMenu();
+  const { toggleMenu, isMenuOpen } = useMenu();
   if (!isMenuOpen) return null;
   return (
     <>
       <aside
         className={`${isMenuOpen ? "relative" : "hidden"} w-80 h-full pt-13 z-2 max-[785px]:fixed`}
-        ref={menuRef}
       >
         <nav className="h-full bg-[#fefefe] p-8 rounded-tr-lg">
           <button

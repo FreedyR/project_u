@@ -2,7 +2,7 @@ import { Map } from "lucide-react";
 const Classes = () => {
   return (
     <>
-      <article className="bg-blue-800 p-4 rounded-lg shadow-md text-white">
+      <article className="bg-blue-800 p-4 rounded-lg shadow-md text-white xl:col-span-2 h-full">
         <header>
           <p>Najbliższe zajęcia</p>
         </header>
