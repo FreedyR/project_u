@@ -6,8 +6,8 @@
 
 #root {
   position: relative;
-  display: flex;
+  display: grid;
   flex-direction: column;
-  height: 100dvh;
+  min-height: 100vh;
   background-color: #ebf2f2;
 }
