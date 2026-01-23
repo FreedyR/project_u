@@ -7,8 +7,8 @@ import Annoucments from "./components/Annoucments.jsx";
 function App() {
   return (
     <>
-      <LeftNav />
       <Header />
+      <LeftNav />
       <main className="h-full">
         <section className="grid sm:grid-cols-2 gap-2 pt-15 auto-rows-min p-2">
           <Classes />
