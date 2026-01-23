@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Header />
-      <LeftNav />
-      <main className="h-full">
+      <main className="h-full grid grid-cols-[auto_1fr]">
+        <LeftNav />
         <section className="grid sm:grid-cols-2 gap-2 pt-15 auto-rows-min p-2">
           <Classes />
           <Exams />

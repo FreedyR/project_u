@@ -18,7 +18,7 @@ const LeftNav = () => {
   };
   return (
     <>
-      <aside className="fixed w-80 h-full pt-10 z-2">
+      <aside className="relative w-80 h-full pt-13 z-2">
         <nav className="h-full bg-[#fefefe] p-8 rounded-tr-lg">
           <Menu className="absolute right-5 translate-y-[-1rem]" />
           <h1 className="text-xl font-bold uppercase">Usos 3.0</h1>
