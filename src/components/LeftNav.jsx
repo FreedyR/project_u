@@ -36,16 +36,14 @@ const LeftNav = () => {
             {Object.entries(Category).map(([key, [Icon, label]]) => (
               <li
                 key={key}
-                className={`relative flex gap-2 p-2 rounded-md ${
-                  key === "cockpit" ? "bg-blue-800 text-white" : ""
-                }`}
+                className={`relative flex gap-2 p-5 rounded-md ${"hover" ? "hover:text-white" : ""}`}
               >
-                <Icon />
                 <a
-                  className="flex top-0 left-0 absolute w-full h-full z-2 items-center"
+                  className={`flex gap-4 top-0 left-0 p-2 absolute w-full ${"hover" ? "hover:bg-blue-800" : ""}  ${"focus" ? "focus:bg-blue-800 focus:text-white" : ""} h-full z-2 rounded-md items-center`}
                   href={`#${key}`}
                 >
-                  <p className="translate-x-10">{label}</p>
+                  <Icon className="z-3" />
+                  <p>{label}</p>
                 </a>
               </li>
             ))}
