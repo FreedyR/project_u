@@ -13,7 +13,7 @@ const Cockpit = () => {
     <main className={`h-full grid ${mainGridLayout}`}>
       <LeftNav />
       <section
-        className={`grid ${isMenuOpen ? "" : `${columnsLayout}`} gap-2 auto-rows-min pt-15 p-2 md:grid-cols-2 xl:grid-cols-3 xl:auto-rows-[25%]`}
+        className={`grid ${isMenuOpen ? "" : `${columnsLayout} sm:grid-cols-2 `} gap-2 auto-rows-min pt-15 p-2 md:grid-cols-2 xl:grid-cols-3 xl:auto-rows-[25%]`}
       >
         <Classes />
         <Annoucments />
