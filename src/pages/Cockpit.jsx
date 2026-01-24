@@ -6,7 +6,7 @@ import { useMenu } from "../hooks/MenuContext.jsx";
 const Cockpit = () => {
   const { isMenuOpen } = useMenu();
   const mainGridLayout = isMenuOpen
-    ? "grid-cols-[auto_1fr] max-[650px]:grid-cols-[auto]"
+    ? "grid-cols-[auto_1fr] max-[580px]:grid-cols-[auto]"
     : "grid-cols-[auto]";
   const columnsLayout = "md:grid-cols-2 max-[505px]:grid-cols-1";
   return (
