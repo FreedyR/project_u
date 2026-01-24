@@ -5,13 +5,16 @@ import LeftNav from "../components/LeftNav.jsx";
 import { useMenu } from "../hooks/MenuContext.jsx";
 const Cockpit = () => {
   const { isMenuOpen } = useMenu();
-  const gridLayout = isMenuOpen
+  const mainGridLayout = isMenuOpen
     ? "grid-cols-[auto_1fr] max-[650px]:grid-cols-[auto]"
     : "grid-cols-[auto]";
+  const columnsLayout = "grid-cols-2 max-[505px]:grid-cols-1";
   return (
-    <main className={`h-full grid ${gridLayout}`}>
+    <main className={`h-full grid ${mainGridLayout}`}>
       <LeftNav />
-      <section className="grid lg:grid-cols-2 xl:grid-cols-3 gap-2 auto-rows-min pt-15 p-2">
+      <section
+        className={`grid ${isMenuOpen ? "" : `${columnsLayout}`} md:grid-cols-2 xl:grid-cols-3 gap-2 auto-rows-min pt-15 p-2`}
+      >
         <Classes />
         <Annoucments />
         <Exams />
