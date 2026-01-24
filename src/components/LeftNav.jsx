@@ -22,7 +22,7 @@ const LeftNav = () => {
   return (
     <>
       <aside
-        className={`${isMenuOpen ? "relative" : "hidden"} w-80 h-full pt-13 z-2 max-[540px]:fixed`}
+        className={`${isMenuOpen ? "relative" : "hidden"} w-80 h-full pt-13 z-2 max-[580px]:fixed`}
       >
         <nav className="h-full bg-[#fefefe] p-8 rounded-tr-lg">
           <button
