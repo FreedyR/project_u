@@ -1,17 +1,13 @@
 import "./App.css";
 import Header from "./components/Header.jsx";
 import { MenuProvider } from "./hooks/MenuContext.jsx";
-import Cockpit from "./pages/Cockpit.jsx";
-import LeftNav from "./components/LeftNav.jsx";
+import Main from "./pages/Main.jsx";
 function App() {
   return (
     <>
       <MenuProvider>
         <Header />
-        <main className="flex">
-          <LeftNav />
-          <Cockpit />
-        </main>
+        <Main />
       </MenuProvider>
     </>
   );

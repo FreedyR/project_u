@@ -2,7 +2,7 @@ import { BellDot } from "lucide-react";
 const Annoucments = () => {
   return (
     <>
-      <article className="relative bg-white p-4 rounded-lg shadow-md xs:h-min xl:h-max">
+      <article className="relative bg-white p-4 rounded-lg shadow-md xs:h-min xl:h-max xl:row-span-2">
         <header className="font-semibold">Ważne komunikaty</header>
         <ul className="flex flex-col gap-3 mt-5 align-middle w-full text-s h-full xl:grid xl:pb-5 xl:auto-rows-min">
           <div className="flex gap-2 items-center">
