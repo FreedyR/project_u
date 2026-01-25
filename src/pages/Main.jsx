@@ -4,7 +4,7 @@ import { useMenu } from "../hooks/MenuContext";
 const Main = () => {
   const { isMenuOpen } = useMenu();
   const mainGridLayout = isMenuOpen
-    ? "grid-cols-[auto_1fr] max-[580px]:grid-cols-[auto]"
+    ? "grid-cols-[auto_1fr] max-md:grid-cols-[auto]"
     : "grid-cols-[auto]";
   return (
     <>

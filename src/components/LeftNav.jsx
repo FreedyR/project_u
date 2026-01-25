@@ -22,11 +22,11 @@ const LeftNav = () => {
   return (
     <>
       <aside
-        className={`${isMenuOpen ? "relative" : "hidden"} w-[20rem] h-full pt-13 z-2 max-[580px]:fixed`}
+        className={`${isMenuOpen ? `${isMenuOpen ? "max-md:fixed" : ""}` : "hidden"} w-[20rem] h-full pt-13 z-2 max-[580px]:fixed`}
       >
-        <nav className="h-full bg-[#fefefe] p-8 rounded-tr-lg">
+        <nav className="relative h-full bg-[#fefefe] p-8 rounded-tr-lg">
           <button
-            className="absolute right-5 translate-y-[-1rem]"
+            className="absolute right-2 translate-y-[-1rem]"
             onClick={toggleMenu}
           >
             <Menu />
