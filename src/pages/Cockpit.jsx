@@ -3,7 +3,7 @@ import Classes from "../components/Classes.jsx";
 import Annoucments from "../components/Annoucments.jsx";
 import { useMenu } from "../hooks/MenuContext.jsx";
 const Cockpit = () => {
-  const columnsLayout = " max-[505px]:grid-cols-1 min-[540px]:grid-cols-2";
+  const columnsLayout = "min-[530px]:grid-cols-2";
   const { isMenuOpen } = useMenu();
   return (
     <article

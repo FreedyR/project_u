@@ -5,7 +5,7 @@ const Exams = () => {
   return (
     <>
       <article
-        className={`bg-white p-4 rounded-lg shadow-md h-min ${isMenuOpen ? "min-md:col-span-2" : "min-[540px]:col-span-2"} `}
+        className={`bg-white p-4 rounded-lg shadow-md h-min ${isMenuOpen ? "min-md:col-span-2" : "min-[530px]:col-span-2"} `}
       >
         <header className="font-semibold">Najbliższe egzaminy</header>
         <ul className="flex flex-col gap-3 mt-5 align-middle w-full">
