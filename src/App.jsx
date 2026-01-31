@@ -7,7 +7,7 @@ function App() {
     <>
       <MenuProvider>
         <Header />
-        <Main />
+        <LoginForm></LoginForm>
       </MenuProvider>
     </>
   );
