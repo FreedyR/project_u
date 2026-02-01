@@ -3,7 +3,7 @@ const LoginForm = () => {
   return (
     <>
       <section className="flex pt-15 p-4 place-content-center">
-        <form className="relative grid grid-cols-2 w-full rounded">
+        <form className="relative grid grid-cols-2 max-sm:grid-cols-1 w-full rounded">
           <div className="flex flex-col gap-5 h-full bg-[#fefefe] p-4 rounded text-center">
             <h2 className="mt-auto text-lg">Logowanie</h2>
             <div className="flex flex-col gap-5  mb-auto">
@@ -31,7 +31,7 @@ const LoginForm = () => {
             </div>
           </div>
           <div className="flex flex-col bg-blue-800 text-white text-center p-4 rounded place-items-center">
-            <div className="flex gap-2 flex-col mt-auto mb-auto translate-y-[-2rem]">
+            <div className="flex gap-2 flex-col mt-auto mb-auto ">
               <h2 className="w-full text-lg">Witaj ponownie Adam!</h2>
               <p>
                 Witaj w oficjalnym systemie obsługi studenta. Zaloguj się, aby
