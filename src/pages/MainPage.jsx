@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router";
 import ClassesPage from "./ClassesPage";
 import LectureRegisterPage from "./LectureRegisterPage";
 import LoginPage from "./LoginPage";
+import CampusMapPage from "./CampusMapPage";
 const MainPage = () => {
   const { isMenuOpen } = useMenu();
   const mainGridLayout = isMenuOpen
@@ -19,6 +20,7 @@ const MainPage = () => {
           <Route path="/classes" element={<ClassesPage />} />
           <Route path="/registration" element={<LectureRegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/campusMap" element={<CampusMapPage />} />
         </Routes>
       </main>
     </>

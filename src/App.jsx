@@ -1,4 +1,5 @@
 import "./App.css";
+import "leaflet/dist/leaflet.css";
 import Header from "./components/Header.jsx";
 import { MenuProvider } from "./hooks/MenuContext.jsx";
 import { BrowserRouter } from "react-router";

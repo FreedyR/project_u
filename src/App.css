@@ -10,3 +10,7 @@
   min-height: 100vh;
   background-color: #ebf2f2;
 }
+
+.leaflet-container {
+  height: 100%;
+}
