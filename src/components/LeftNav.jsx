@@ -1,22 +1,8 @@
-import {
-  House,
-  Calendar,
-  GraduationCap,
-  PencilLine,
-  BanknoteArrowDown,
-  Map,
-  Menu,
-} from "lucide-react";
+import { Menu } from "lucide-react";
 import { useMenu } from "../hooks/MenuContext";
+import { Link } from "react-router";
+import Category from "../misc/CategoryNav";
 const LeftNav = () => {
-  const Category = {
-    cockpit: [House, "Kokpit"],
-    classes: [Calendar, "Zajęcia"],
-    grades: [GraduationCap, "Oceny i ECTS"],
-    registration: [PencilLine, "Rejestracja"],
-    payments: [BanknoteArrowDown, "Płatności"],
-    campusMap: [Map, "Mapa Kampusu"],
-  };
   const { toggleMenu, isMenuOpen } = useMenu();
   if (!isMenuOpen) return null;
   return (
@@ -38,13 +24,13 @@ const LeftNav = () => {
                 key={key}
                 className={`relative flex gap-2 p-5 rounded-md ${"hover" ? "hover:text-white" : ""}`}
               >
-                <a
+                <Link
                   className={`flex gap-4 top-0 left-0 p-2 absolute w-full ${"hover" ? "hover:bg-blue-800" : ""}  ${"focus" ? "focus:bg-blue-800 focus:text-white" : ""} h-full z-2 rounded-md items-center`}
-                  href={`#${key}`}
+                  to={`/${key}`}
                 >
                   <Icon className="z-3" />
                   <p>{label}</p>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
