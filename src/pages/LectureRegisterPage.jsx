@@ -31,7 +31,6 @@ const LectureRegisterPage = () => {
               <label className="flex items-center cursor-pointer group">
                 <div className="relative">
                   <input
-                    checked={isChecked}
                     onClick={handleCheckboxClick}
                     type="checkbox"
                     className="peer sr-only"

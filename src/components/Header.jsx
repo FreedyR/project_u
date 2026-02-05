@@ -1,6 +1,7 @@
-import { LogOut, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Man from "../man.png";
 import { useMenu } from "../hooks/MenuContext";
+import Logout from "./Logout";
 
 const Header = () => {
   const { toggleMenu, isMenuOpen } = useMenu();
@@ -21,9 +22,7 @@ const Header = () => {
           <figcaption className="text-sm text-gray-500 flex items-center">
             Witaj, Adam! (s120334)
           </figcaption>
-          <button className="ml-2">
-            <LogOut />
-          </button>
+          <Logout />
         </figure>
       </header>
     </>

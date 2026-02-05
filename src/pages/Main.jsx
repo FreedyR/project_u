@@ -4,6 +4,7 @@ import { useMenu } from "../hooks/MenuContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import ClassesPage from "./ClassesPage";
 import LectureRegisterPage from "./LectureRegisterPage";
+import LoginForm from "./Login";
 const Main = () => {
   const { isMenuOpen } = useMenu();
   const mainGridLayout = isMenuOpen
@@ -17,6 +18,7 @@ const Main = () => {
           <Route path="/" element={<Cockpit />} />
           <Route path="/classes" element={<ClassesPage />} />
           <Route path="/registration" element={<LectureRegisterPage />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
       </main>
     </>
