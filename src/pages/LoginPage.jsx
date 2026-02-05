@@ -1,5 +1,5 @@
 import { Key } from "lucide-react";
-const LoginForm = () => {
+const LoginPage = () => {
   return (
     <>
       <section className="flex pt-15 p-4 place-content-center">
@@ -49,4 +49,4 @@ const LoginForm = () => {
     </>
   );
 };
-export default LoginForm;
+export default LoginPage;

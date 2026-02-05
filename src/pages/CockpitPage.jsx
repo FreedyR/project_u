@@ -2,7 +2,7 @@ import Exams from "../components/Exams.jsx";
 import Lectures from "../components/Lectures.jsx";
 import Annoucments from "../components/Annoucments.jsx";
 import { useMenu } from "../hooks/MenuContext.jsx";
-const Cockpit = () => {
+const CockpitPage = () => {
   const columnsLayout = "min-[530px]:grid-cols-2";
   const { isMenuOpen } = useMenu();
   return (
@@ -15,4 +15,4 @@ const Cockpit = () => {
     </section>
   );
 };
-export default Cockpit;
+export default CockpitPage;
