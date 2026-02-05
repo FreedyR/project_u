@@ -1,7 +1,7 @@
 import LeftNav from "../components/LeftNav";
 import Cockpit from "./Cockpit";
 import { useMenu } from "../hooks/MenuContext";
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { Routes, Route } from "react-router";
 import ClassesPage from "./ClassesPage";
 import LectureRegisterPage from "./LectureRegisterPage";
 import LoginForm from "./Login";
