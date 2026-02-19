@@ -2,7 +2,7 @@ import { Map } from "lucide-react";
 const ClassesPage = () => {
   return (
     <>
-      <section className="pt-15 p-4 grid grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] auto-rows-min gap-2">
+      <section className="pt-15 p-2 grid grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] auto-rows-min gap-2">
         {Array.from({ length: 7 }).map((_, i) => (
           <article
             key={i}

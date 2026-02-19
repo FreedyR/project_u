@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dnd-kit/react": "^0.3.2",
     "@tailwindcss/vite": "^4.1.18",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.562.0",
