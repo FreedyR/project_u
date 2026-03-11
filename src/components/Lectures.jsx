@@ -21,7 +21,7 @@ const Lectures = () => {
           </div>
 
           <button
-            className={`ml-auto w-min h-min ${bgColor.blue} p-2 rounded-lg`}
+            className={`ml-auto w-min h-min ${bgColor.bluebg} p-2 rounded-lg`}
           >
             <Map className="text-white" />
           </button>
