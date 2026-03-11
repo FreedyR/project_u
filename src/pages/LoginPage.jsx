@@ -3,7 +3,10 @@ const LoginPage = () => {
   return (
     <>
       <section className="flex pt-15 p-4 place-content-center">
-        <form className="relative grid grid-cols-2 max-sm:grid-cols-1 w-full rounded">
+        <form
+          method="POST"
+          className="relative grid grid-cols-2 max-sm:grid-cols-1 w-full rounded"
+        >
           <div className="flex flex-col gap-5 h-full bg-[#fefefe] p-4 rounded text-center">
             <h2 className="mt-auto text-lg">Logowanie</h2>
             <div className="flex flex-col gap-5  mb-auto">
