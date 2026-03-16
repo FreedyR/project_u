@@ -7,6 +7,7 @@ import LectureRegisterPage from "./LectureRegisterPage";
 import LoginPage from "./LoginPage";
 import CampusMapPage from "./CampusMapPage";
 import GradesPage from "./GradesPage";
+import PaymentPage from "./PaymentPage";
 const MainPage = () => {
   const { isMenuOpen } = useMenu();
   const mainGridLayout = isMenuOpen
@@ -21,6 +22,7 @@ const MainPage = () => {
           <Route path="/classes" element={<ClassesPage />} />
           <Route path="/registration" element={<LectureRegisterPage />} />
           <Route path="/grades" element={<GradesPage />}></Route>
+          <Route path="/payments" element={<PaymentPage />}></Route>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/campusMap" element={<CampusMapPage />} />
         </Routes>
