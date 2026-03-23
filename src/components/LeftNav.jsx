@@ -26,7 +26,7 @@ const LeftNav = () => {
               >
                 <Link
                   className={`flex gap-4 top-0 left-0 p-2 absolute w-full ${"hover" ? "hover:bg-blue-800" : ""}  ${"focus" ? "focus:bg-blue-800 focus:text-white" : ""} h-full z-2 rounded-md items-center`}
-                  to={`/${key}`}
+                  to={`${key}`}
                 >
                   <Icon className="z-3" />
                   <p>{label}</p>
