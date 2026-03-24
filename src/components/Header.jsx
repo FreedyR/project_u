@@ -1,5 +1,5 @@
 import { Menu } from "lucide-react";
-import Man from "../man.png";
+import Man from "../assets/man.png";
 import { useMenu } from "../hooks/MenuContext";
 import Logout from "./Logout";
 import { useLocation } from "react-router";
