@@ -2,7 +2,7 @@ import { Globe, BookOpen } from "lucide-react";
 const GradesPage = () => {
   return (
     <>
-      <section className="pt-21 p-4">
+      <section className="pt-21 max-sm:pt-25 p-4">
         <article className="relative w-full bg-[#bd82f4] p-4 rounded flex flex-wrap gap-5 border-3 border-[#a40eef]">
           <p className="absolute translate-y-[-2.6rem] text-xl">Analiza</p>
           <p>Dr. Jan Kowalski</p>

@@ -8,7 +8,7 @@ const LeftNav = () => {
   return (
     <>
       <aside
-        className={`${isMenuOpen ? `${isMenuOpen ? "max-[580px]:fixed" : ""}` : "hidden"} w-[20rem] h-full pt-20 z-3`}
+        className={`${isMenuOpen ? `${isMenuOpen ? "max-[580px]:fixed" : ""}` : "hidden"} w-[20rem] h-full max-md:pt-20 pt-13 z-3`}
       >
         <nav className="relative h-full bg-[#fefefe] p-8 rounded-tr-lg">
           <button
