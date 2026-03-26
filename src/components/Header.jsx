@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed flex w-full gap-2 p-2 z-2">
+      <header className="fixed flex w-full gap-2 p-2 z-2 max-sm:bg-[#ebf2f2]">
         <section className="flex justify-items-center gap-4">
           <button
             className={`${isMenuOpen ? "hidden" : "relative"} z-3`}
@@ -24,7 +24,7 @@ const Header = () => {
           >
             <Menu />
           </button>
-          <h2 className="text-xl font-bold translate-y-1 gap-2 flex items-center">
+          <h2 className="text-lg font-bold  gap-2 flex items-center">
             {<CategoryIcon />}
             {CategoryName}
           </h2>
