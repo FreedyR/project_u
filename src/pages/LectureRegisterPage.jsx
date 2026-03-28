@@ -72,7 +72,7 @@ const LectureRegisterPage = () => {
             </button>
           </article>
         </section>
-        <div className="absolute flex justify-center items-center right-1 bottom-1 bg-white w-10 h-10 rounded-full">
+        <div className="fixed flex justify-center items-center right-1 bottom-1 bg-white w-10 h-10 rounded-full">
           <button>
             <ListCheck />
           </button>
