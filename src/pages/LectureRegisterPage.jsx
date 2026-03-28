@@ -65,9 +65,7 @@ const LectureRegisterPage = () => {
               <p>Adam Boch</p>
             </div>
             <button className="flex gap-2 items-center">
-              <div className="bg-[green] rounded-full h-[100%]">
-                <Check className="text-white" />
-              </div>
+              <Check className="text-[green]" />
               Zapisano się
             </button>
           </article>

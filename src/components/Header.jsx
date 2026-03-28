@@ -29,12 +29,14 @@ const Header = () => {
             {CategoryName}
           </h2>
         </section>
-        <figure className="ml-auto flex gap-2">
+        <figure className="relative ml-auto flex gap-1 items-center mr-2">
           <img className="w-10 rounded-full shadow-md" src={Man} />
           <figcaption className="text-sm text-gray-500 flex items-center">
             Witaj, Adam! (s120334)
           </figcaption>
-          <Logout />
+          <div className="h-full flex">
+            <Logout />
+          </div>
         </figure>
       </header>
     </>

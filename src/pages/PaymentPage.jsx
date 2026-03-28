@@ -1,33 +1,85 @@
-import universityBG from "../assets/Pixel.png";
-import dormitoryBG from "../assets/Pixel2.png";
+import {
+  University,
+  Hotel,
+  Check,
+  BanknoteArrowUp,
+  LoaderCircle,
+} from "lucide-react";
+
 const PaymentPage = () => {
   return (
     <>
-      <section className="pt-15 p-4 grid gap-2 grid-cols-2 z-1">
-        <article className="flex flex-col gap-2 justify-center items-center relative">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px] z-0"
-            style={{ backgroundImage: `url(${dormitoryBG})` }}
-          ></div>
-          <p className="relative bg-[#b1e92f97] text-center text-white p-4 rounded w-[80%] ">
-            Akademik
-          </p>
-          <button className="relative bg-[#b1e92ff1] text-center text-white p-4 rounded w-[80%] ">
-            Opłać
-          </button>
+      <section className="pt-20 p-4 flex flex-col flex-wrap">
+        <article>
+          <nav>
+            <ul className="flex flex-wrap gap-4 justify-center">
+              <li className="relative bg-white w-42 rounded-full p-2 text-center shadow border-1 border-blue-300">
+                <figure className="flex justify-center gap-2">
+                  <Hotel className="absolute left-3" />
+                  <figcaption>Akademik</figcaption>
+                </figure>
+              </li>
+              <li className="relative bg-white w-42 rounded-full p-2 text-center shadow">
+                <figure className="flex justify-center gap-2">
+                  <University className="absolute left-3" />
+                  <figcaption>Uniwersytet</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </nav>
         </article>
-        <article className="flex flex-col gap-2 justify-center items-center relative">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat blur-[2px] z-0"
-            style={{ backgroundImage: `url(${universityBG})` }}
-          ></div>
-          <p className="relative bg-[#0aebee97] text-center text-white p-4 rounded w-[80%] ">
-            Uniwersytet
-          </p>
-          <button className="relative bg-[#0aeaeee3] text-center text-white p-4 rounded w-[80%] ">
-            Opłać
-          </button>
+        <article hidden className="flex gap-3 justify-center text-center">
+          <div className="translate-y-5 rounded bg-white w-30 shadow p-2">
+            Opłaty
+          </div>
+          <div className="translate-y-5 rounded bg-white w-30 shadow p-2">
+            Historia
+          </div>
         </article>
+        <section className="flex translate-y-10 md:ms-15 md:me-15 ">
+          <article className="relative flex flex-col gap-5 w-full">
+            <section className="flex bg-white rounded-[0.3rem] p-4">
+              <div className="flex-1">
+                <p>DS 21</p>
+                <p>Różana 1</p>
+              </div>
+              <div className="flex flex-1 items-center ms-auto me-auto translate-x-[-3.1rem]">
+                <p>10.03.2026</p>
+              </div>
+              <button className="flex gap-2 items-center">
+                <BanknoteArrowUp />
+                Opłać
+              </button>
+            </section>
+
+            <section className="border-1 border-[orange] flex bg-white rounded-[0.3rem] p-4">
+              <div className="flex-1">
+                <p>DS 21</p>
+                <p>Różana 1</p>
+              </div>
+              <div className="flex  flex-1 items-center ms-auto me-auto">
+                <p>10.02.2026</p>
+              </div>
+              <div className="flex gap-2 items-center text-end">
+                <LoaderCircle className="text-[orange]" />
+                <p className="w-min md:w-max">Rozliczanie płatności</p>
+              </div>
+            </section>
+            <section className="border-1 border-[green] flex bg-white rounded-[0.3rem]  p-4">
+              <div className="flex-1">
+                <p>DS 21</p>
+                <p>Różana 1</p>
+              </div>
+              <div className="flex  flex-1 items-center ms-auto me-auto translate-x-[-2.3rem]">
+                <p>10.01.2026</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <Check className="text-[green]" />
+                Rozliczono
+              </div>
+            </section>
+          </article>
+        </section>
       </section>
     </>
   );
