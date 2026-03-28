@@ -28,7 +28,7 @@ const PaymentPage = () => {
             </ul>
           </nav>
         </article>
-        <article hidden className="flex gap-3 justify-center text-center">
+        <article className="flex gap-3 justify-center text-center">
           <div className="translate-y-5 rounded bg-white w-30 shadow p-2">
             Opłaty
           </div>
