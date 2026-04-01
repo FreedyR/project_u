@@ -1,5 +1,16 @@
-import { Key } from "lucide-react";
+import { CircleUser, Key } from "lucide-react";
+import { useLocationName } from "../hooks/LocationContext";
+import { useEffect } from "react";
+
 const LoginPage = () => {
+  const { setLocation } = useLocationName();
+  useEffect(() => {
+    setLocation({
+      name: "Logowanie",
+      icon: <CircleUser />,
+    });
+    return () => setLocation({ name: "", icon: null });
+  }, [setLocation]);
   return (
     <>
       <section className="flex pt-15 p-4 place-content-center">

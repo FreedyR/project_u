@@ -1,5 +1,18 @@
-import { Globe, BookOpen } from "lucide-react";
+import { Globe, BookOpen, GraduationCap } from "lucide-react";
+import { useEffect } from "react";
+import { useLocationName } from "../hooks/LocationContext";
+import Category from "../misc/CategoryNav";
+
 const GradesPage = () => {
+  const { setLocation } = useLocationName();
+  const [Icon, label] = Category["/grades"];
+  useEffect(() => {
+    setLocation({
+      name: label,
+      icon: <Icon />,
+    });
+    return () => setLocation({ name: "", icon: null });
+  }, [setLocation]);
   return (
     <>
       <section className="pt-21 max-sm:pt-25 p-4">

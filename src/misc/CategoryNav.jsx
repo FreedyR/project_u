@@ -15,6 +15,5 @@ const Category = {
   "/registration": [PencilLine, "Rejestracja"],
   "/payments": [BanknoteArrowDown, "Płatności"],
   "/campusMap": [Map, "Mapa Kampusu"],
-  "/login": [CircleUser, "Logowanie"],
 };
 export default Category;

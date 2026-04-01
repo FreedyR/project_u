@@ -1,19 +1,22 @@
-import { Menu } from "lucide-react";
+import { Home, Menu } from "lucide-react";
 import Man from "../assets/man.png";
 import { useMenu } from "../hooks/MenuContext";
 import Logout from "./Logout";
-import { useLocation } from "react-router";
+import { useEffect, useState } from "react";
+import { useLocationName } from "../hooks/LocationContext";
 import Category from "../misc/CategoryNav";
+
 const Header = () => {
   const { toggleMenu, isMenuOpen } = useMenu();
-
-  const currentLocation = useLocation();
-  const currentKey = currentLocation.pathname;
-
-  const currentCategoryData = Category[currentKey];
-  const CategoryIcon = currentCategoryData ? currentCategoryData[0] : null;
-  const CategoryName = currentCategoryData ? currentCategoryData[1] : "";
-
+  const { location } = useLocationName();
+  const { setLocation } = useLocationName();
+  const [Icon, label] = Category["/"];
+  useEffect(() => {
+    setLocation({
+      name: label,
+      icon: <Icon />,
+    });
+  }, [setLocation]);
   return (
     <>
       <header className="fixed flex w-full gap-2 p-2 z-2 max-sm:bg-[#ebf2f2]">
@@ -25,8 +28,8 @@ const Header = () => {
             <Menu />
           </button>
           <h2 className="text-lg font-bold  gap-2 flex items-center">
-            {<CategoryIcon />}
-            {CategoryName}
+            {location.icon}
+            {location.name}
           </h2>
         </section>
         <figure className="relative ml-auto flex gap-1 items-center mr-2">

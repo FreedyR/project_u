@@ -3,11 +3,22 @@ import {
   Speech,
   BellDot,
   ShoppingCart,
-  CheckCircle,
   Check,
   ListCheck,
 } from "lucide-react";
+import { useLocationName } from "../hooks/LocationContext";
+import Category from "../misc/CategoryNav";
+import { useEffect } from "react";
 const LectureRegisterPage = () => {
+  const { setLocation } = useLocationName();
+  const [Icon, label] = Category["/registration"];
+  useEffect(() => {
+    setLocation({
+      name: label,
+      icon: <Icon />,
+    });
+    return () => setLocation({ name: "", icon: null });
+  }, [setLocation]);
   return (
     <>
       <section className="pt-20 p-4">

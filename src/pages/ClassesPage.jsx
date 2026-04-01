@@ -1,5 +1,19 @@
 import { Map } from "lucide-react";
+import { useEffect } from "react";
+import { useLocationName } from "../hooks/LocationContext";
+import Category from "../misc/CategoryNav";
+
 const ClassesPage = () => {
+  const { setLocation } = useLocationName();
+  const [Icon, label] = Category["/classes"];
+  useEffect(() => {
+    setLocation({
+      name: label,
+      icon: <Icon />,
+    });
+    return () => setLocation({ name: "", icon: null });
+  }, [setLocation]);
+
   return (
     <>
       <section className="pt-15 p-2 grid grid-cols-[repeat(auto-fit,_minmax(200px,1fr))] auto-rows-min gap-2">
