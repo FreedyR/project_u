@@ -9,9 +9,13 @@ import {
 import { useLocationName } from "../hooks/LocationContext";
 import Category from "../misc/CategoryNav";
 import { useEffect } from "react";
+import { useQuery } from "@apollo/client/react";
+import { GET_LECTURES } from "../graphql/queries";
+
 const LectureRegisterPage = () => {
   const { setLocation } = useLocationName();
   const [Icon, label] = Category["/registration"];
+
   useEffect(() => {
     setLocation({
       name: label,
@@ -19,6 +23,15 @@ const LectureRegisterPage = () => {
     });
     return () => setLocation({ name: "", icon: null });
   }, [setLocation]);
+
+  const { data, loading, error } = useQuery(GET_LECTURES);
+
+  if (loading) return <p className="text-center pt-20">Ładowanie...</p>;
+  if (error)
+    return (
+      <p className="text-center pt-20 text-red-500">Błąd: {error.message}</p>
+    );
+
   return (
     <>
       <section className="pt-20 p-4">
@@ -46,41 +59,35 @@ const LectureRegisterPage = () => {
             </ul>
           </nav>
         </article>
+
         <article className="flex justify-center">
           <div className="absolute translate-y-5 rounded bg-white shadow p-2">
             Łączna ilość żetonów: 2
           </div>
         </article>
-        <section className="flex flex-col gap-5 translate-y-20 md:ms-15 md:me-15 ">
-          <article className="flex bg-white rounded-[0.3rem] w-full p-4 items-center">
-            <div className="flex-1">
-              <p>Fizyka 1 | B18</p>
-              <p>Różana 1</p>
-            </div>
-            <div className="flex flex-1 gap-4 ms-auto me-auto">
-              <p>8:00 - 9:30</p>
-              <p>Krzysztof Michalski</p>
-            </div>
-            <button className="flex gap-2 items-center">
-              <ShoppingCart />
-              Zapisz się
-            </button>
-          </article>
-          <article className="flex bg-white rounded-[0.3rem] w-full p-4 items-center border-2 border-green-300">
-            <div className="flex-1">
-              <p>Analiza Matematyczna 1 | B18</p>
-              <p>Kwiatowa 2</p>
-            </div>
-            <div className="flex flex-1 gap-4 ms-auto me-auto">
-              <p>13:15 - 14:45</p>
-              <p>Adam Boch</p>
-            </div>
-            <button className="flex gap-2 items-center">
-              <Check className="text-[green]" />
-              Zapisano się
-            </button>
-          </article>
+
+        <section className="flex flex-col gap-5 translate-y-20 md:ms-15 md:me-15">
+          {data?.lectures?.map((lecture, index) => (
+            <article
+              key={index}
+              className="flex bg-white rounded-[0.3rem] w-full p-4 items-center"
+            >
+              <div className="flex-1">
+                <p>{lecture.name}</p>
+                <p>Różana 1</p>
+              </div>
+              <div className="flex flex-1 gap-4 ms-auto me-auto">
+                <p>8:00 - 9:30</p>
+                <p>Krzysztof Michalski</p>
+              </div>
+              <button className="flex gap-2 items-center">
+                <ShoppingCart />
+                Zapisz się
+              </button>
+            </article>
+          ))}
         </section>
+
         <div className="fixed flex justify-center items-center right-1 bottom-1 bg-white w-10 h-10 rounded-full">
           <button>
             <ListCheck />
@@ -90,4 +97,5 @@ const LectureRegisterPage = () => {
     </>
   );
 };
+
 export default LectureRegisterPage;

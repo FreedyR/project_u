@@ -8,6 +8,7 @@ import LoginPage from "./LoginPage";
 import CampusMapPage from "./CampusMapPage";
 import GradesPage from "./GradesPage";
 import PaymentPage from "./PaymentPage";
+
 const MainPage = () => {
   const { isMenuOpen } = useMenu();
   const mainGridLayout = isMenuOpen
