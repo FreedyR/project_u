@@ -8,13 +8,19 @@ import {
 } from "lucide-react";
 import { useLocationName } from "../hooks/LocationContext";
 import Category from "../misc/CategoryNav";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client/react";
 import { GET_LECTURES } from "../graphql/queries";
+import SignUpButton from "../components/SignUpButton";
 
 const LectureRegisterPage = () => {
   const { setLocation } = useLocationName();
   const [Icon, label] = Category["/registration"];
+
+  const [category, setCategory] = useState("Wizyta");
+  const handleSetCategory = (btnCategory) => {
+    //add function to change category 
+  };
 
   useEffect(() => {
     setLocation({
@@ -38,24 +44,24 @@ const LectureRegisterPage = () => {
         <article>
           <nav>
             <ul className="flex flex-wrap gap-4 justify-center">
-              <li className="relative bg-white w-42 rounded-full p-2 text-center shadow border-1 border-blue-300">
+              <button className="relative bg-white w-42 rounded-full p-2 text-center shadow border-1 border-blue-300">
                 <figure className="flex justify-center gap-2">
                   <Hammer className="absolute left-3" />
                   <figcaption>Przedmiot</figcaption>
                 </figure>
-              </li>
-              <li className="relative bg-white w-42 rounded-full p-2 text-center shadow">
+              </button>
+              <button className="relative bg-white w-42 rounded-full p-2 text-center shadow">
                 <figure className="flex justify-center gap-2">
                   <Speech className="absolute left-3" />
                   <figcaption>Lektorat</figcaption>
                 </figure>
-              </li>
-              <li className="relative bg-white w-42 rounded-full p-2 text-center shadow">
+              </button>
+              <button className="relative bg-white w-42 rounded-full p-2 text-center shadow">
                 <figure className="flex justify-center gap-2">
                   <BellDot className="absolute left-3" />
                   <figcaption>Wizyta</figcaption>
                 </figure>
-              </li>
+              </button>
             </ul>
           </nav>
         </article>
@@ -67,25 +73,24 @@ const LectureRegisterPage = () => {
         </article>
 
         <section className="flex flex-col gap-5 translate-y-20 md:ms-15 md:me-15">
-          {data?.lectures?.map((lecture, index) => (
-            <article
-              key={index}
-              className="flex bg-white rounded-[0.3rem] w-full p-4 items-center"
-            >
-              <div className="flex-1">
-                <p>{lecture.name}</p>
-                <p>Różana 1</p>
-              </div>
-              <div className="flex flex-1 gap-4 ms-auto me-auto">
-                <p>8:00 - 9:30</p>
-                <p>Krzysztof Michalski</p>
-              </div>
-              <button className="flex gap-2 items-center">
-                <ShoppingCart />
-                Zapisz się
-              </button>
-            </article>
-          ))}
+          {data?.lectures?.map((lecture, index) =>
+            lecture.type && category && lecture.type === category ? (
+              <article
+                key={index}
+                className="flex bg-white rounded-[0.3rem] w-full p-4 items-center"
+              >
+                <div className="flex-1">
+                  <p>{lecture.name}</p>
+                  <p>Różana 1</p>
+                </div>
+                <div className="flex flex-1 gap-4 ms-auto me-auto">
+                  <p>8:00 - 9:30</p>
+                  <p>Krzysztof Michalski</p>
+                </div>
+                <SignUpButton signed={lecture.signed} />
+              </article>
+            ) : null,
+          )}
         </section>
 
         <div className="fixed flex justify-center items-center right-1 bottom-1 bg-white w-10 h-10 rounded-full">
