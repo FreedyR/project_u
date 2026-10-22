@@ -1,11 +1,4 @@
-import {
-  Hammer,
-  Speech,
-  BellDot,
-  ShoppingCart,
-  Check,
-  ListCheck,
-} from "lucide-react";
+import { Hammer, Speech, BellDot, ListCheck } from "lucide-react";
 import { useLocationName } from "../hooks/LocationContext";
 import Category from "../misc/CategoryNav";
 import { useEffect, useState } from "react";
@@ -16,10 +9,11 @@ import SignUpButton from "../components/SignUpButton";
 const LectureRegisterPage = () => {
   const { setLocation } = useLocationName();
   const [Icon, label] = Category["/registration"];
+  const [category, setCategory] = useState("Przedmiot");
+  const icon = [<Hammer />, <Speech />, <BellDot />];
 
-  const [category, setCategory] = useState("Wizyta");
   const handleSetCategory = (btnCategory) => {
-    //add function to change category 
+    //add function to change category
   };
 
   useEffect(() => {
@@ -44,24 +38,21 @@ const LectureRegisterPage = () => {
         <article>
           <nav>
             <ul className="flex flex-wrap gap-4 justify-center">
-              <button className="relative bg-white w-42 rounded-full p-2 text-center shadow border-1 border-blue-300">
-                <figure className="flex justify-center gap-2">
-                  <Hammer className="absolute left-3" />
-                  <figcaption>Przedmiot</figcaption>
-                </figure>
-              </button>
-              <button className="relative bg-white w-42 rounded-full p-2 text-center shadow">
-                <figure className="flex justify-center gap-2">
-                  <Speech className="absolute left-3" />
-                  <figcaption>Lektorat</figcaption>
-                </figure>
-              </button>
-              <button className="relative bg-white w-42 rounded-full p-2 text-center shadow">
-                <figure className="flex justify-center gap-2">
-                  <BellDot className="absolute left-3" />
-                  <figcaption>Wizyta</figcaption>
-                </figure>
-              </button>
+              {data.lectures
+                ?.filter(
+                  (lecture, index, self) =>
+                    index === self.findIndex((l) => l.type === lecture.type),
+                )
+                .map((lecture, index) => (
+                  <button
+                    key={index}
+                    value={lecture.type}
+                    className="relative flex justify-center gap-2 bg-white w-42 rounded-full p-2 text-center shadow border-1 border-blue-300"
+                  >
+                    <div className="absolute left-3">{icon[index]}</div>
+                    <figcaption>{lecture.type}</figcaption>
+                  </button>
+                ))}
             </ul>
           </nav>
         </article>
