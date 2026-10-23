@@ -12,8 +12,9 @@ const LectureRegisterPage = () => {
   const [category, setCategory] = useState("Przedmiot");
   const icon = [<Hammer />, <Speech />, <BellDot />];
 
-  const handleSetCategory = (btnCategory) => {
-    //add function to change category
+  const handleSetCategory = (e) => {
+    const value = e.currentTarget.value;
+    setCategory(value);
   };
 
   useEffect(() => {
@@ -47,9 +48,10 @@ const LectureRegisterPage = () => {
                   <button
                     key={index}
                     value={lecture.type}
-                    className="relative flex justify-center gap-2 bg-white w-42 rounded-full p-2 text-center shadow border-1 border-blue-300"
+                    onClick={handleSetCategory}
+                    className={`relative flex justify-center gap-2 bg-white w-42 rounded-full p-2 text-center shadow ${lecture.type === category ? "border-1 border-blue-300" : ""} `}
                   >
-                    <div className="absolute left-3">{icon[index]}</div>
+                    <div className="absolute left-3">{icon[index] || null}</div>
                     <figcaption>{lecture.type}</figcaption>
                   </button>
                 ))}
