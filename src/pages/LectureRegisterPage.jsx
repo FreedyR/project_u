@@ -10,7 +10,11 @@ const LectureRegisterPage = () => {
   const { setLocation } = useLocationName();
   const [Icon, label] = Category["/registration"];
   const [category, setCategory] = useState("Przedmiot");
-  const icon = [<Hammer />, <Speech />, <BellDot />];
+  const icon = {
+    Przedmiot: <Hammer />,
+    Lektorat: <Speech />,
+    Wizyta: <BellDot />,
+  };
 
   const handleSetCategory = (e) => {
     const value = e.currentTarget.value;
@@ -51,7 +55,9 @@ const LectureRegisterPage = () => {
                     onClick={handleSetCategory}
                     className={`relative flex justify-center gap-2 bg-white w-42 rounded-full p-2 text-center shadow ${lecture.type === category ? "border-1 border-blue-300" : ""} `}
                   >
-                    <div className="absolute left-3">{icon[index] || null}</div>
+                    <div className="absolute left-3">
+                      {icon[lecture.type] || null}
+                    </div>
                     <figcaption>{lecture.type}</figcaption>
                   </button>
                 ))}
