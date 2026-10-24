@@ -9,3 +9,12 @@ export const GET_LECTURES = gql`
     }
   }
 `;
+export const GET_LECTURE_ENUM = gql`
+  query GetLectureEnum {
+    __type(name: "LectureEnum") {
+      enumValues {
+        name
+      }
+    }
+  }
+`;

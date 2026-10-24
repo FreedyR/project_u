@@ -3,7 +3,7 @@ import { useLocationName } from "../hooks/LocationContext";
 import Category from "../misc/CategoryNav";
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client/react";
-import { GET_LECTURES } from "../graphql/queries";
+import { GET_LECTURE_ENUM, GET_LECTURES } from "../graphql/queries";
 import SignUpButton from "../components/SignUpButton";
 
 const LectureRegisterPage = () => {
@@ -30,7 +30,12 @@ const LectureRegisterPage = () => {
   }, [setLocation]);
 
   const { data, loading, error } = useQuery(GET_LECTURES);
-
+  const {
+    data: data2,
+    loading: loading2,
+    error: error2,
+  } = useQuery(GET_LECTURE_ENUM);
+  const categories = data2?.__type?.enumValues || [];
   if (loading) return <p className="text-center pt-20">Ładowanie...</p>;
   if (error)
     return (
@@ -43,24 +48,19 @@ const LectureRegisterPage = () => {
         <article>
           <nav>
             <ul className="flex flex-wrap gap-4 justify-center">
-              {data.lectures
-                ?.filter(
-                  (lecture, index, self) =>
-                    index === self.findIndex((l) => l.type === lecture.type),
-                )
-                .map((lecture, index) => (
-                  <button
-                    key={index}
-                    value={lecture.type}
-                    onClick={handleSetCategory}
-                    className={`relative flex justify-center gap-2 bg-white w-42 rounded-full p-2 text-center shadow ${lecture.type === category ? "border-1 border-blue-300" : ""} `}
-                  >
-                    <div className="absolute left-3">
-                      {icon[lecture.type] || null}
-                    </div>
-                    <figcaption>{lecture.type}</figcaption>
-                  </button>
-                ))}
+              {categories.map((cat, index) => (
+                <button
+                  key={index}
+                  value={cat.name}
+                  onClick={handleSetCategory}
+                  className={`relative flex justify-center gap-2 bg-white w-42 rounded-full p-2 text-center shadow ${cat.name === category ? "border-1 border-blue-300" : ""} `}
+                >
+                  <div className="absolute left-3">
+                    {icon[cat.name] || null}
+                  </div>
+                  <figcaption>{cat.name}</figcaption>
+                </button>
+              ))}
             </ul>
           </nav>
         </article>
