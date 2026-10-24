@@ -1,21 +1,16 @@
-import { Hammer, Speech, BellDot, ListCheck } from "lucide-react";
+import { ListCheck } from "lucide-react";
 import { useLocationName } from "../hooks/LocationContext";
 import Category from "../misc/CategoryNav";
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client/react";
-import { GET_LECTURE_ENUM, GET_LECTURES } from "../graphql/queries";
-import SignUpButton from "../components/SignUpButton";
+import { GET_LECTURES } from "../graphql/queries";
+import LectureTypes from "../components/LectureRegister/LectureTypes";
+import LectureMap from "../components/LectureRegister/LectureMap";
 
 const LectureRegisterPage = () => {
   const { setLocation } = useLocationName();
   const [Icon, label] = Category["/registration"];
   const [category, setCategory] = useState("Przedmiot");
-  const icon = {
-    Przedmiot: <Hammer />,
-    Lektorat: <Speech />,
-    Wizyta: <BellDot />,
-  };
-
   const handleSetCategory = (e) => {
     const value = e.currentTarget.value;
     setCategory(value);
@@ -29,38 +24,16 @@ const LectureRegisterPage = () => {
     return () => setLocation({ name: "", icon: null });
   }, [setLocation]);
 
-  const { data, loading, error } = useQuery(GET_LECTURES);
-  const {
-    data: data2,
-    loading: loading2,
-    error: error2,
-  } = useQuery(GET_LECTURE_ENUM);
-  const categories = data2?.__type?.enumValues || [];
-  if (loading) return <p className="text-center pt-20">Ładowanie...</p>;
-  if (error)
-    return (
-      <p className="text-center pt-20 text-red-500">Błąd: {error.message}</p>
-    );
-
   return (
     <>
       <section className="pt-20 p-4">
         <article>
           <nav>
             <ul className="flex flex-wrap gap-4 justify-center">
-              {categories.map((cat, index) => (
-                <button
-                  key={index}
-                  value={cat.name}
-                  onClick={handleSetCategory}
-                  className={`relative flex justify-center gap-2 bg-white w-42 rounded-full p-2 text-center shadow ${cat.name === category ? "border-1 border-blue-300" : ""} `}
-                >
-                  <div className="absolute left-3">
-                    {icon[cat.name] || null}
-                  </div>
-                  <figcaption>{cat.name}</figcaption>
-                </button>
-              ))}
+              <LectureTypes
+                category={category}
+                handleSetCategory={handleSetCategory}
+              />
             </ul>
           </nav>
         </article>
@@ -72,24 +45,7 @@ const LectureRegisterPage = () => {
         </article>
 
         <section className="flex flex-col gap-5 translate-y-20 md:ms-15 md:me-15">
-          {data?.lectures?.map((lecture, index) =>
-            lecture.type && category && lecture.type === category ? (
-              <article
-                key={index}
-                className="flex bg-white rounded-[0.3rem] w-full p-4 items-center"
-              >
-                <div className="flex-1">
-                  <p>{lecture.name}</p>
-                  <p>Różana 1</p>
-                </div>
-                <div className="flex flex-1 gap-4 ms-auto me-auto">
-                  <p>8:00 - 9:30</p>
-                  <p>Krzysztof Michalski</p>
-                </div>
-                <SignUpButton signed={lecture.signed} />
-              </article>
-            ) : null,
-          )}
+          <LectureMap type={category} />
         </section>
 
         <div className="fixed flex justify-center items-center right-1 bottom-1 bg-white w-10 h-10 rounded-full">
