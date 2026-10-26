@@ -9,12 +9,8 @@ export const GET_LECTURES = gql`
     }
   }
 `;
-export const GET_LECTURE_ENUM = gql`
-  query GetLectureEnum {
-    __type(name: "LectureEnum") {
-      enumValues {
-        name
-      }
-    }
+export const GET_LECTURE_TYPES = gql`
+  query Query {
+    lectureTypes
   }
 `;
