@@ -1,16 +1,16 @@
 import { gql } from "@apollo/client";
 
-export const GET_LECTURES = gql`
-  query Lectures {
-    lectures {
+export const GET_COURSES = gql`
+  query Courses {
+    courses {
       name
       type
       signed
     }
   }
 `;
-export const GET_LECTURE_TYPES = gql`
+export const GET_COURSE_TYPES = gql`
   query Query {
-    lectureTypes
+    courseTypes
   }
 `;

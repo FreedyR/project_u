@@ -3,11 +3,11 @@ import { useLocationName } from "../hooks/LocationContext";
 import Category from "../misc/CategoryNav";
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client/react";
-import { GET_LECTURES } from "../graphql/queries";
-import LectureTypes from "../components/LectureRegister/LectureTypes";
-import LectureMap from "../components/LectureRegister/LectureMap";
+import { GET_COURSES } from "../graphql/queries";
+import CourseTypes from "../components/CourseRegister/CourseTypes";
+import CourseMap from "../components/CourseRegister/CourseMap";
 
-const LectureRegisterPage = () => {
+const CourseRegisterPage = () => {
   const { setLocation } = useLocationName();
   const [Icon, label] = Category["/registration"];
   const [category, setCategory] = useState("Przedmiot");
@@ -30,7 +30,7 @@ const LectureRegisterPage = () => {
         <article>
           <nav>
             <ul className="flex flex-wrap gap-4 justify-center">
-              <LectureTypes
+              <CourseTypes
                 category={category}
                 handleSetCategory={handleSetCategory}
               />
@@ -45,7 +45,7 @@ const LectureRegisterPage = () => {
         </article>
 
         <section className="flex flex-col gap-5 translate-y-20 md:ms-15 md:me-15">
-          <LectureMap type={category} />
+          <CourseMap type={category} />
         </section>
 
         <div className="fixed flex justify-center items-center right-1 bottom-1 bg-white w-10 h-10 rounded-full">
@@ -58,4 +58,4 @@ const LectureRegisterPage = () => {
   );
 };
 
-export default LectureRegisterPage;
+export default CourseRegisterPage;

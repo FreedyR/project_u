@@ -3,7 +3,7 @@ import CockpitPage from "./CockpitPage";
 import { useMenu } from "../hooks/MenuContext";
 import { Routes, Route } from "react-router";
 import ClassesPage from "./ClassesPage";
-import LectureRegisterPage from "./LectureRegisterPage";
+import CourseRegisterPage from "./CourseRegisterPage";
 import LoginPage from "./LoginPage";
 import CampusMapPage from "./CampusMapPage";
 import GradesPage from "./GradesPage";
@@ -21,7 +21,7 @@ const MainPage = () => {
         <Routes>
           <Route path="/" element={<CockpitPage />} />
           <Route path="/classes" element={<ClassesPage />} />
-          <Route path="/registration" element={<LectureRegisterPage />} />
+          <Route path="/registration" element={<CourseRegisterPage />} />
           <Route path="/grades" element={<GradesPage />}></Route>
           <Route path="/payments" element={<PaymentPage />}></Route>
           <Route path="/login" element={<LoginPage />} />

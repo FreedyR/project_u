@@ -1,5 +1,5 @@
 import { Map } from "lucide-react";
-const Lectures = () => {
+const Courses = () => {
   const bgColor = {
     bluebg: "bg-blue-800",
     greenbg: "bg-green-800",
@@ -30,4 +30,4 @@ const Lectures = () => {
     </>
   );
 };
-export default Lectures;
+export default Courses;
